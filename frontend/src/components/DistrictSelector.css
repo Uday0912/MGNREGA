@@ -1,0 +1,183 @@
+.district-selector {
+  position: relative;
+  width: 100%;
+  min-width: 250px;
+}
+
+.selector-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+}
+
+.selector-trigger:hover {
+  border-color: #9ca3af;
+}
+
+.selector-trigger.open {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.trigger-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selected-district {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.placeholder {
+  color: #9ca3af;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+  color: #6b7280;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.selector-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 400px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.districts-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.district-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.district-item:hover {
+  background: #f9fafb;
+}
+
+.district-item.selected {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.district-item:last-child {
+  border-bottom: none;
+}
+
+.district-info {
+  flex: 1;
+}
+
+.district-name {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.district-state {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.125rem;
+}
+
+/* Removed loading spinner styles since we use demo data immediately */
+
+/* Removed unused spin animation */
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.no-results small {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.dropdown-footer {
+  padding: 0.75rem 1rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .district-selector {
+    min-width: auto;
+  }
+  
+  .selector-trigger {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  .district-item {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  .search-container {
+    padding: 0.75rem;
+  }
+}

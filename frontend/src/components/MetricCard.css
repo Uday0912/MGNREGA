@@ -1,0 +1,169 @@
+.metric-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.metric-icon-blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.metric-icon-green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.metric-icon-orange {
+  background: #fed7aa;
+  color: #ea580c;
+}
+
+.metric-icon-purple {
+  background: #e9d5ff;
+  color: #9333ea;
+}
+
+.metric-icon-red {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.metric-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.metric-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.metric-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.metric-trend {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.metric-trend-up {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.metric-trend-down {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.metric-trend-neutral {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.trend-icon {
+  font-size: 0.875rem;
+}
+
+.trend-value {
+  font-weight: 600;
+}
+
+/* Color variants */
+.metric-card-blue {
+  border-left: 4px solid #2563eb;
+}
+
+.metric-card-green {
+  border-left: 4px solid #16a34a;
+}
+
+.metric-card-orange {
+  border-left: 4px solid #ea580c;
+}
+
+.metric-card-purple {
+  border-left: 4px solid #9333ea;
+}
+
+.metric-card-red {
+  border-left: 4px solid #dc2626;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .metric-card {
+    padding: 1rem;
+  }
+  
+  .metric-card-header {
+    gap: 0.75rem;
+  }
+  
+  .metric-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+  }
+  
+  .metric-trend {
+    position: static;
+    margin-top: 0.5rem;
+    align-self: flex-start;
+  }
+}

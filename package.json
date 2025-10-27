@@ -1,0 +1,20 @@
+{
+  "name": "mgnrega-dashboard",
+  "version": "1.0.0",
+  "description": "MGNREGA Data Visualization Dashboard",
+  "scripts": {
+    "start": "echo 'Please run: npm run dev' to start both servers",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm start",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["mgnrega", "dashboard", "data", "visualization"],
+  "author": "",
+  "license": "MIT"
+}

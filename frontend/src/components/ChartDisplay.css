@@ -1,0 +1,49 @@
+.chart-container {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Chart.js custom styles */
+.chart-wrapper canvas {
+  max-height: 100% !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 1rem;
+  }
+  
+  .chart-title {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .chart-container {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  .chart-title {
+    color: #f9fafb;
+  }
+}

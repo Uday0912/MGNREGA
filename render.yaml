@@ -1,0 +1,34 @@
+# Render manifest for MGNREGA application
+# NOTE: This file defines two services (backend and frontend). For security,
+# please set sensitive values (MONGODB_URI, API keys) in the Render dashboard
+# under the service's Environment settings — do NOT commit secrets to git.
+
+services:
+  - type: web
+    name: mgnrega-backend
+    env: node
+    plan: free
+    branch: main
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: "<SET_IN_RENDER_DASHBOARD>"
+      - key: FRONTEND_URLS
+        value: "<SET_IN_RENDER_DASHBOARD>" # comma-separated frontend origins
+
+static_sites:
+  - name: mgnrega-frontend
+    branch: main
+    buildCommand: cd frontend && npm ci && npm run build
+    publishPath: frontend/build
+    env:
+      - key: REACT_APP_API_URL
+        value: "<SET_IN_RENDER_DASHBOARD>" # e.g. https://mgnrega-backend.onrender.com/api
+
+# After adding this file, you can connect the repository in the Render dashboard
+# and Render will create the services defined here. Then set the real secret
+# values in Render's Environment settings for each service.

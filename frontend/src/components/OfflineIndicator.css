@@ -1,0 +1,64 @@
+.offline-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: slideDown 0.3s ease-out;
+}
+
+.offline-indicator.offline {
+  background: #fef3c7;
+  color: #92400e;
+  border-bottom: 1px solid #f59e0b;
+}
+
+.offline-indicator.online {
+  background: #d1fae5;
+  color: #065f46;
+  border-bottom: 1px solid #10b981;
+}
+
+.indicator-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .offline-indicator {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
