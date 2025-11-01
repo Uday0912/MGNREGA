@@ -246,7 +246,7 @@ npm run build
 # Deploy build folder to your web server
 ```
 
-### Render (recommended)
+### Render (recommended for backend)
 
 You can host both frontend (Static Site) and backend (Web Service) on Render. The repo includes a `render.yaml` manifest that defines both services. Steps:
 
@@ -273,6 +273,42 @@ You can host both frontend (Static Site) and backend (Web Service) on Render. Th
 Notes:
 - Do NOT commit secrets (like `MONGODB_URI`) to the repo. Use Render's environment settings.
 - If CORS issues appear, set `FRONTEND_URLS` in backend to include the deployed frontend origin.
+
+### Vercel (recommended for frontend)
+
+Deploy the React frontend to Vercel for fast, global CDN distribution. The backend should be deployed separately (e.g., on Render, Railway, or Heroku).
+
+#### Quick Deploy:
+
+**Option 1: Via Vercel Dashboard**
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and click "New Project"
+3. Import your repository
+4. Configure:
+   - **Framework Preset**: Create React App
+   - **Root Directory**: `.` (root)
+   - **Build Command**: `cd frontend && npm install && npm run build`
+   - **Output Directory**: `frontend/build`
+5. Add Environment Variable:
+   - `REACT_APP_API_URL` = `https://your-backend-url.com/api`
+6. Click "Deploy"
+
+**Option 2: Via CLI**
+```bash
+npm install -g vercel
+vercel login
+vercel
+vercel env add REACT_APP_API_URL
+# Enter your backend API URL (e.g., https://your-backend.onrender.com/api)
+vercel --prod
+```
+
+#### Important Notes:
+- Deploy backend separately (Render is recommended - see above)
+- Set `FRONTEND_URLS` in backend to include your Vercel domain
+- Update `REACT_APP_API_URL` in Vercel dashboard after deployment
+
+See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for detailed instructions.
 
 
 ## 🧪 Testing

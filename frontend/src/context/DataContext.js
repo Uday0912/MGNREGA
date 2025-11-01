@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import axios from 'axios';
 import { demoDistricts, demoMetrics, demoCacheStatus } from '../utils/demoData';
+import { API_BASE_URL } from '../config/api';
 
 const DataContext = createContext();
 
@@ -63,9 +64,6 @@ const dataReducer = (state, action) => {
   }
 };
 
-// API base URL
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
-
 // Simple client-side cache and inflight request dedupe
 const CACHE_TTL_MS = 1000 * 60 * 60; // 1 hour
 const DISTRICTS_CACHE_KEY = 'mgnrega:districts:v1';
@@ -74,6 +72,16 @@ const ongoingRequests = new Map();
 // Data provider component
 export const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
+
+  // Get API URL dynamically at runtime
+  const getApiUrl = () => {
+    // Use explicit env var if set
+    if (process.env.REACT_APP_API_URL) {
+      return process.env.REACT_APP_API_URL;
+    }
+    // Runtime detection
+    return `${window.location.origin}/api`;
+  };
 
   // API helper functions with retry logic
   const apiCall = async (endpoint, options = {}, retries = 4, attempt = 0) => {
@@ -85,8 +93,9 @@ export const DataProvider = ({ children }) => {
 
     const promise = (async () => {
       try {
+        const apiBaseUrl = getApiUrl();
         const response = await axios({
-          url: `${API_BASE_URL}${endpoint}`,
+          url: `${apiBaseUrl}${endpoint}`,
           method: options.method || 'GET',
           data: options.data,
           params: options.params,
