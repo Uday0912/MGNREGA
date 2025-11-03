@@ -3,7 +3,6 @@ import { useData } from '../context/DataContext';
 import MetricCard from '../components/MetricCard';
 import ChartDisplay from '../components/ChartDisplay';
 import DistrictSelector from '../components/DistrictSelector';
-import LoadingSpinner from '../components/LoadingSpinner';
 import { 
   TrendingUp, 
   Users, 
@@ -19,7 +18,6 @@ const Dashboard = () => {
   const { 
     selectedDistrict,
     metrics,
-    loading,
     error,
     fetchDistrictPerformance,
     setSelectedDistrict,

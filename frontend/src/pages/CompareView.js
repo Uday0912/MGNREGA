@@ -3,7 +3,6 @@ import { useData } from '../context/DataContext';
 import MetricCard from '../components/MetricCard';
 import ChartDisplay from '../components/ChartDisplay';
 import DistrictSelector from '../components/DistrictSelector';
-import LoadingSpinner from '../components/LoadingSpinner';
 import { 
   Users, 
   Briefcase, 
@@ -17,11 +16,7 @@ import './CompareView.css';
 
 const CompareView = () => {
   const { 
-    districts,
-    loading,
-    error,
-    compareDistricts,
-    fetchStateComparison
+    error
   } = useData();
 
   const [selectedDistricts, setSelectedDistricts] = useState([]);

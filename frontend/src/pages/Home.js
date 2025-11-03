@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import MetricCard from '../components/MetricCard';
 import ChartDisplay from '../components/ChartDisplay';
-import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { TrendingUp, Users, Briefcase, DollarSign } from 'lucide-react';
 import './Home.css';
@@ -11,7 +10,6 @@ const Home = () => {
   const { 
     districts, 
     metrics, 
-    loading, 
     error, 
     cacheStatus, 
     fetchCacheStatus,
