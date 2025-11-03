@@ -1,7 +1,7 @@
 {
   "name": "mgnrega-dashboard",
   "version": "1.0.0",
-  "description": "MGNREGA Data Visualization Dashboard",
+  "description": "MGNREGA Data Visualization Dashboard - Full Stack",
   "scripts": {
     "start": "echo 'Please run: npm run dev' to start both servers",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
@@ -9,12 +9,14 @@
     "frontend": "cd frontend && npm start",
     "install-all": "npm run install-backend && npm run install-frontend",
     "install-backend": "cd backend && npm install",
-    "install-frontend": "cd frontend && npm install"
+    "install-frontend": "cd frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "vercel-build": "cd frontend && npm ci && npm run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
   },
-  "keywords": ["mgnrega", "dashboard", "data", "visualization"],
+  "keywords": ["mgnrega", "dashboard", "data", "visualization", "vercel", "serverless"],
   "author": "",
   "license": "MIT"
 }

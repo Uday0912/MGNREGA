@@ -79,8 +79,12 @@ export const DataProvider = ({ children }) => {
     if (process.env.REACT_APP_API_URL) {
       return process.env.REACT_APP_API_URL;
     }
-    // Runtime detection
-    return `${window.location.origin}/api`;
+    // For Vercel deployment, API is on same origin
+    // Runtime detection - use same origin with /api path
+    if (typeof window !== 'undefined') {
+      return `${window.location.origin}/api`;
+    }
+    return '/api';
   };
 
   // API helper functions with retry logic

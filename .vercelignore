@@ -17,5 +17,4 @@ yarn-error.log*
 *.log
 run.bat
 setup.bat
-backend/
 render.yaml
