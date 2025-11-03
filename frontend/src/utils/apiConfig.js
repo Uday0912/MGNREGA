@@ -1,17 +1,4 @@
-/**
- * Dynamic API URL configuration utility
- * Detects API URL at runtime based on environment
- */
 
-/**
- * Get the API base URL dynamically
- * This function runs in the browser and detects the appropriate API URL
- * 
- * Priority:
- * 1. REACT_APP_API_URL (explicitly set in environment variables - highest priority)
- * 2. Runtime detection from current origin (for same-origin deployments)
- * 3. Fallback to relative path
- */
 export const getDynamicApiUrl = () => {
   // Check for explicit API URL (set in Vercel dashboard)
   if (process.env.REACT_APP_API_URL) {
