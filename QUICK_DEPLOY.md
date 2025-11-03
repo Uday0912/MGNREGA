@@ -8,9 +8,9 @@
    - **Project Name:** `mgnrega`
    - **Framework Preset:** `Other`
    - **Root Directory:** `.` (leave empty)
-   - **Build Command:** `cd frontend && npm ci && npm run build`
+   - **Build Command:** `cd frontend; npm ci; npm run build`
    - **Output Directory:** `frontend/build`
-   - **Install Command:** `cd frontend && npm ci && cd ../backend && npm ci`
+   - **Install Command:** `cd frontend; npm ci; cd ../backend; npm ci`
 
 2. **Environment Variables** (add all of these):
 
@@ -88,9 +88,9 @@ Vercel should auto-detect your settings, but verify these:
 - **Project Name:** `mgnrega` (or your preferred name)
 - **Framework Preset:** `Other` or `Create React App`
 - **Root Directory:** Leave as `.` (default)
-- **Build Command:** `cd frontend && npm ci && npm run build`
+- **Build Command:** `cd frontend; npm ci; npm run build`
 - **Output Directory:** `frontend/build`
-- **Install Command:** `cd frontend && npm ci && cd ../backend && npm ci`
+- **Install Command:** `cd frontend; npm ci; cd ../backend; npm ci`
 
 ### Step 4: Add Environment Variables
 
