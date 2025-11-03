@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import axios from 'axios';
 import { demoDistricts, demoMetrics, demoCacheStatus } from '../utils/demoData';
-import { API_BASE_URL } from '../config/api';
 
 const DataContext = createContext();
 

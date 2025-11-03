@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Wifi, WifiOff, AlertCircle } from 'lucide-react';
+import { Wifi, WifiOff } from 'lucide-react';
 import './OfflineIndicator.css';
 
 const OfflineIndicator = () => {

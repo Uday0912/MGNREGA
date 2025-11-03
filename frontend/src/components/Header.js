@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, RefreshCw, Wifi, WifiOff } from 'lucide-react';
+import { RefreshCw, Wifi, WifiOff } from 'lucide-react';
 import './Header.css';
 
 const Header = ({ onMenuClick, sidebarOpen }) => {

@@ -6,7 +6,6 @@ import {
   GitCompare, 
   MapPin, 
   Database,
-  TrendingUp,
   Sparkles,
   Clock
 } from 'lucide-react';

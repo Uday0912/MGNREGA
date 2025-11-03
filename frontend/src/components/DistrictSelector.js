@@ -4,7 +4,7 @@ import { MapPin, Search, ChevronDown } from 'lucide-react';
 import './DistrictSelector.css';
 
 const DistrictSelector = ({ onSelect, selectedDistrict, placeholder = "Select a district..." }) => {
-  const { districts, loading, fetchDistricts } = useData();
+  const { districts, fetchDistricts } = useData();
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredDistricts, setFilteredDistricts] = useState([]);
@@ -13,7 +13,7 @@ const DistrictSelector = ({ onSelect, selectedDistrict, placeholder = "Select a 
     if (districts.length === 0) {
       fetchDistricts({ limit: 100 });
     }
-  }, []);
+  }, [districts.length, fetchDistricts]);
 
   useEffect(() => {
     if (searchTerm) {
